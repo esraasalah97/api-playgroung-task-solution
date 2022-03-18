@@ -1,7 +1,7 @@
 # api-playgroung-task-solution
 
 - The API Testing implemented using Postman Tool, the solution is the collection TestCategoryAPI.
-- You will find two folders one of them contains the solution which is named <obj>TestCategoryAPI</obj>, and you will find also results file of a run inside it. 
+- You will find two folders one of them contains the solution which is named <obj>TestCategoryAPI</obj>, and you will find also results file of a run named <od>TestCategoryAPI.postman_test_run</od> inside it. 
 The other folder contains the imported <obj>API Playground</obj> postman collection which is named <od>API Playground Collection Enhanced</od> but with some enhancements in the requests related to the category end point. 
 
 ## To Run the Collection TestCategoryAPI 
