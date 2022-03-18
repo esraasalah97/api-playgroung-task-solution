@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "0ee00c30-88ac-41ad-bf94-7fbae386dc85",
+		"name": "TestCategoryAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllCategories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", ()=> {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", ()=> {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", ()=> {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"let jsonData = pm.response.json();\r",
+							"pm.collectionVariables.set(\"CategoriesTotalNumber\", jsonData.total);\r",
+							"pm.test(\"Check Variable total in response body\",()=>{\r",
+							"pm.expect(jsonData.total).greaterThan(4000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/categories",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specfic Category With Name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",  () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\",()=> {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", ()=> {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"let jsonData = pm.response.json();\r",
+							"pm.collectionVariables.set(\"CategoriesTotalNumber\", jsonData.total);\r",
+							"pm.test(\"Check Variable total in response body\",()=>{\r",
+							"pm.expect(jsonData.total).eqls(1);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/categories?name=Gift Ideas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"categories"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Gift Ideas"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specfic Category With Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", ()=> {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", ()=> {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"let jsonData = pm.response.json();\r",
+							"pm.collectionVariables.set(\"CategoriesTotalNumber\", jsonData.total);\r",
+							"pm.test(\"Check Variable total in response body\",()=>{\r",
+							"pm.expect(jsonData.total).eqls(1);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/categories?id=pcmcat84000050000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"categories"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "pcmcat84000050000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Deleted Category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", ()=> {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", ()=> {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"let jsonData = pm.response.json();\r",
+							"pm.test(\"Check Variable total in response body\",()=>{\r",
+							"pm.expect(jsonData.total).eqls(0);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/categories?id={{deletedCategoryId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"categories"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{deletedCategoryId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", ()=> {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", ()=> {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", ()=> {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"New Category\",\r\n    \"id\":\"{{$randomAlphaNumeric}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/categories",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",  () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", ()=> {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", ()=> {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"{{$randomFullName}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/categories?id=pcmcat84000050001",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"categories"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "pcmcat84000050001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",  () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", ()=> {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", ()=> {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"pm.test(\"Body is correct\", ()=> {\r",
+							"    pm.response.to.have.body(\"[]\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/categories?id=pcmcat748301108075",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"categories"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "pcmcat748301108075"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3030",
+			"type": "string"
+		},
+		{
+			"key": "deletedCategoryId",
+			"value": "------",
+			"type": "string"
+		},
+		{
+			"key": "CategoriesTotalNumber",
+			"value": ""
+		}
+	]
+}

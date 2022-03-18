@@ -1,0 +1,349 @@
+{
+	"id": "3a3fdc28-eeec-42ff-a07c-62e6d3efef22",
+	"name": "TestCategoryAPI",
+	"timestamp": "2022-03-18T18:20:10.475Z",
+	"collection_id": "8461641-0ee00c30-88ac-41ad-bf94-7fbae386dc85",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 26,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "81dd1de0-a688-41e6-9eee-7c3c24ed3423",
+			"name": "GetAllCategories",
+			"url": "http://localhost:3030/categories",
+			"time": 53,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Response time is less than 2000ms": true,
+				"Check Variable total in response body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check Variable total in response body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				53
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Response time is less than 2000ms": true,
+					"Check Variable total in response body": true
+				}
+			]
+		},
+		{
+			"id": "268ea6b4-aadb-4b89-ade6-05e3a775ab47",
+			"name": "Get Specfic Category With Name",
+			"url": "http://localhost:3030/categories?name=Gift%20Ideas",
+			"time": 23,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Response time is less than 2000ms": true,
+				"Check Variable total in response body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check Variable total in response body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				23
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Response time is less than 2000ms": true,
+					"Check Variable total in response body": true
+				}
+			]
+		},
+		{
+			"id": "4c32d4e4-78f2-4cf2-8c8f-2971be72c700",
+			"name": "Get Specfic Category With Id",
+			"url": "http://localhost:3030/categories?id=pcmcat84000050000",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Response time is less than 2000ms": true,
+				"Check Variable total in response body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check Variable total in response body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Response time is less than 2000ms": true,
+					"Check Variable total in response body": true
+				}
+			]
+		},
+		{
+			"id": "a4989ca1-8bc9-4bd2-940b-c1a01fad4575",
+			"name": "Check Deleted Category",
+			"url": "http://localhost:3030/categories?id=pcmcat748301108075",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Response time is less than 2000ms": true,
+				"Check Variable total in response body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check Variable total in response body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Response time is less than 2000ms": true,
+					"Check Variable total in response body": true
+				}
+			]
+		},
+		{
+			"id": "273f4a55-cee1-4fed-a6c3-0757add484e3",
+			"name": "Create New Category",
+			"url": "http://localhost:3030/categories",
+			"time": 117,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Content-Type is present": true,
+				"Response time is less than 2000ms": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				117
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Content-Type is present": true,
+					"Response time is less than 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "e759e1c5-87a1-4dcd-9584-7d16c1b89785",
+			"name": "Update Category",
+			"url": "http://localhost:3030/categories?id=pcmcat84000050001",
+			"time": 65,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Response time is less than 2000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				65
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Response time is less than 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "30c20c84-8e7f-446c-99f8-46ed083dc6d3",
+			"name": "Delete Category",
+			"url": "http://localhost:3030/categories?id=pcmcat748301108075",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Response time is less than 2000ms": true,
+				"Body is correct": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Response time is less than 2000ms": true,
+					"Body is correct": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 281,
+	"collection": {
+		"requests": [
+			{
+				"id": "81dd1de0-a688-41e6-9eee-7c3c24ed3423",
+				"method": "GET"
+			},
+			{
+				"id": "268ea6b4-aadb-4b89-ade6-05e3a775ab47",
+				"method": "GET"
+			},
+			{
+				"id": "4c32d4e4-78f2-4cf2-8c8f-2971be72c700",
+				"method": "GET"
+			},
+			{
+				"id": "a4989ca1-8bc9-4bd2-940b-c1a01fad4575",
+				"method": "GET"
+			},
+			{
+				"id": "273f4a55-cee1-4fed-a6c3-0757add484e3",
+				"method": "POST"
+			},
+			{
+				"id": "e759e1c5-87a1-4dcd-9584-7d16c1b89785",
+				"method": "PATCH"
+			},
+			{
+				"id": "30c20c84-8e7f-446c-99f8-46ed083dc6d3",
+				"method": "DELETE"
+			}
+		]
+	}
+}
