@@ -4,10 +4,10 @@
 - You Will find to postman collections one of them is the imported one form the documentaion called <obj>API Playground</obj>
  and the other one is the i made for categories requests <obj>TestCategoryAPI</obj></br>
  
-### I have created a monitor for each of the two collections:
+### Collections Monitors:
 
-1) For the <obj>API Playground</obj>, i have created a monitor with the same name which runs every Monday on weekly bases.
-2) For the <obj>TestCategoryAPI</obj>, i have created a monitor named <od>Categories Testsuite</od> which also runs every Monday on a daily bases.</br>
+- For the <obj>API Playground</obj>, i have created a monitor with the same name which runs every Monday on weekly bases.
+- For the <obj>TestCategoryAPI</obj>, i have created a monitor named <od>Categories Testsuite</od> which also runs every Monday on a daily bases.</br>
 
 ### For the TestCategoryAPI Collection
 
